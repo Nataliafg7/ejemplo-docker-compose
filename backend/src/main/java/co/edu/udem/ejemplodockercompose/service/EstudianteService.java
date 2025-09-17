@@ -22,4 +22,11 @@ public class EstudianteService {
     public Estudiante create(Estudiante estudiante) {
         return estudianteRepository.save(estudiante);
     }
+
+    public void delete(Long id) {
+        if (!estudianteRepository.existsById(id)) {
+            throw new RuntimeException("Estudiante no encontrado con id " + id);
+        }
+        estudianteRepository.deleteById(id);
+    }
 }

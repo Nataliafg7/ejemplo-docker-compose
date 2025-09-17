@@ -28,6 +28,12 @@ public class EstudianteController {
 
     @PostMapping("/estudiantes")
     public Estudiante createEstudiante(@RequestBody Estudiante estudiante) {
-        return estudianteService.create(estudiante);
+        return estudianteService.create(estudiante);}
+
+    @DeleteMapping("/estudiantes/{id}")
+    public void deleteEstudiante(@PathVariable Long id) {
+        estudianteService.delete(id);
+
+
     }
 }
